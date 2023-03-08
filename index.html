@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -17,62 +17,162 @@
   <body>
     <h1>PE Opdracht</h1>
     <div class="container">
-        <main>
-            <div class="row g-5">
-                <div class="col-md-5 col-lg-4 order-md-last"></div>
-                <div class="col-md-7 col-lg-8">
-                    <h2 class="mb-3">Registreer</h2>
-                    <p>Meld je aan bij Anoroc Services, wij beschermen jouw software tegen malware!</p>
-                    <form class="needs-validation" novalidate="" action="" method="post">
-                        <div class="row g-3">
-                            <!--Rij 1-->
-                            <div class="col-sm-6">
-                                <label class="form-label" for="IPvoornaam">Voornaam</label>
-                                <input id="IPvoornaam" class="form-control" type="text" placeholder="Uw voornaam" required="">
-                                <div class="invalid-feedback">Het veld voornaam is vereist</div>
-                            </div>
-                            <div class="col-sm-6">
-                                <label class="form-label" for="IPnaam">Naam</label>
-                                <input id="IPnaam" class="form-control" type="text" placeholder="Uw naam" required="">
-                                <div class="invalid-feedback">Het veld naam is vereist</div>
-                            </div>
-                            <!--Rij 2-->
-                            <div class="col-sm-6">
-                                <label class="form-label" for="IPgebruikersnaam">Gebruikersnaam</label>
-                                <div class="input-group">
-                                    <span class="input-group-text">@</span>
-                                    <input id="IPgebruikersnaam" class="form-control" type="text" placeholder="u911236" required="">
-                                    <div class="invalid-feedback">Het veld Gebruikersnaam is vereist</div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <label class="form-label" for="IPmail">E-mailadres</label>
-                                <input id="IPmail" class="form-control" type="email" placeholder="mail@example.be" required="">
-                                <div class="invalid-feedback">Het veld E-mailadres is vereist</div>
-                            </div>
-                            <!--Rij 3-->
-                            <div class="col-sm-6">
-                                <label class="form-label" for="IPwachtwoord">Wachtwoord</label>
-                                <input id="IPwachtwoord" class="form-control" type="password" required="">
-                                <div class="invalid-feedback">Het veld Wachtwoord is vereist</div>
-                                <small class="text-muted">Je wachtwoord moet minstens 8 tekens lang zijn</small>
-                            </div>
-                            <div class="col-sm-6">
-                                <label class="form-label" for="IPhwachtwoord">Herhaal wachtwoord</label>
-                                <input id="IPhwachtwoord" class="form-control" type="password" required="">
-                                <div class="invalid-feedback">Het veld Herhaal wachtwoord is vereist</div>
-                            </div>
-                            <!--Rij 4-->
-                            <div class="col-12">
-                                <label class="form-label" for="IPadres">Adres</label>
-                                <input id="IPadres" class="form-control" type="text" placeholder="Uw adres en huisnummer" required="">
-                                <div class="invalid-feedback">Het veld Adres is vereist</div>
-                            </div>
-                        </div>
-                    </form>
+      <main>
+        <div class="row g-5">
+          <div class="col-md-5 col-lg-4 order-md-last"></div>
+          <div class="col-md-7 col-lg-8">
+            <h2 class="mb-3">Registreer</h2>
+            <p>
+              Meld je aan bij Anoroc Services, wij beschermen jouw software
+              tegen malware!
+            </p>
+            <form
+              class="needs-validation"
+              novalidate=""
+              action=""
+              method="post"
+            >
+              <div class="row g-3">
+                <!--Rij 1-->
+                <div class="col-sm-6">
+                  <label class="form-label" for="IPvoornaam">Voornaam</label>
+                  <input
+                    id="IPvoornaam"
+                    class="form-control"
+                    type="text"
+                    placeholder="Uw voornaam"
+                    required=""
+                  />
+                  <div class="invalid-feedback">
+                    Het veld voornaam is vereist
+                  </div>
                 </div>
-            </div>
-        </main>
+                <div class="col-sm-6">
+                  <label class="form-label" for="IPnaam">Naam</label>
+                  <input
+                    id="IPnaam"
+                    class="form-control"
+                    type="text"
+                    placeholder="Uw naam"
+                    required=""
+                  />
+                  <div class="invalid-feedback">Het veld naam is vereist</div>
+                </div>
+                <!--Rij 2-->
+                <div class="col-sm-6">
+                  <label class="form-label" for="IPgebruikersnaam"
+                    >Gebruikersnaam</label
+                  >
+                  <div class="input-group">
+                    <span class="input-group-text">@</span>
+                    <input
+                      id="IPgebruikersnaam"
+                      class="form-control"
+                      type="text"
+                      placeholder="u911236"
+                      required=""
+                    />
+                    <div class="invalid-feedback">
+                      Het veld Gebruikersnaam is vereist
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <label class="form-label" for="IPmail">E-mailadres</label>
+                  <input
+                    id="IPmail"
+                    class="form-control"
+                    type="email"
+                    placeholder="mail@example.be"
+                    required=""
+                  />
+                  <div class="invalid-feedback">
+                    Het veld E-mailadres is vereist
+                  </div>
+                </div>
+                <!--Rij 3-->
+                <div class="col-sm-6">
+                  <label class="form-label" for="IPwachtwoord"
+                    >Wachtwoord</label
+                  >
+                  <input
+                    id="IPwachtwoord"
+                    class="form-control"
+                    type="password"
+                    required=""
+                  />
+                  <div class="invalid-feedback">
+                    Het veld Wachtwoord is vereist
+                  </div>
+                  <small class="text-muted"
+                    >Je wachtwoord moet minstens 8 tekens lang zijn</small
+                  >
+                </div>
+                <div class="col-sm-6">
+                  <label class="form-label" for="IPhwachtwoord"
+                    >Herhaal wachtwoord</label
+                  >
+                  <input
+                    id="IPhwachtwoord"
+                    class="form-control"
+                    type="password"
+                    required=""
+                  />
+                  <div class="invalid-feedback">
+                    Het veld Herhaal wachtwoord is vereist
+                  </div>
+                </div>
+                <!--Rij 4-->
+                <div class="col-12">
+                  <label class="form-label" for="IPadres">Adres</label>
+                  <input
+                    id="IPadres"
+                    class="form-control"
+                    type="text"
+                    placeholder="Uw adres en huisnummer"
+                    required=""
+                  />
+                  <div class="invalid-feedback">Het veld Adres is vereist</div>
+                </div>
+                <!--Rij 5-->
+                <div class="col-md-5">
+                  <label class="form-label" for="IPland">Land</label>
+                  <select class="form-select" id="IPland" required="">
+                    <option value="">Kies een land</option>
+                    <option>Nederland</option>
+                    <option>België</option>
+                    <option>Finland</option>
+                    <option>Frankrijk</option>
+                    <option>Spanje</option>
+                    <option>Italië</option>
+                    <div class="invalid-feedback">Kies een geldig land</div>
+                  </select>
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label" for="IPprovincie">Provincie</label>
+                  <select class="form-select" id="IPprovincie">
+                    <option value="">Kies een provincie</option>
+                    <option>Limburg</option>
+                    <option>Antwerpen</option>
+                    <option>Brussel</option>
+                    <div class="invalid-feedback">
+                      Kies een geldige provincie
+                    </div>
+                  </select>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label" for="IPpostcode">Postcode</label>
+                    <input
+                    id="IPpostcode"
+                    class="form-control"
+                    type="number"
+                  />
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </main>
     </div>
 
     <!--Toevoegen Bootstrap-->
