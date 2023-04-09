@@ -20,7 +20,9 @@ function validateForm() {
   let provincieSelect = document.getElementById("IPprovincie").value;
   let postcodeInput = document.getElementById("IPpostcode").value;
   let ophoogteCheck = document.getElementById("IPinschrijven").value;
-  let betalingCheck = document.querySelector('input[name="paymentMethod"]:checked').value;
+  let betalingCheck = document.querySelector(
+    'input[name="paymentMethod"]:checked'
+  ).value;
 
   // Leeg maken van alert boxen
   foutmelding.innerHTML = "";
@@ -39,6 +41,19 @@ function validateForm() {
   checkEmptyField(provincieSelect, "Provincie is vereist.");
   checkEmptyField(postcodeInput, "Het veld postcode is vereist.");
   checkEmptyField(ophoogteCheck, "Je moet de algemene voorwaarden accepteren.");
+}
+
+// Kijken of de waarde e-mail is ingegeven
+function checkEmail(emailInput) {
+  // https://www.simplilearn.com/tutorials/javascript-tutorial/email-validation-in-javascript
+  var validRegex =
+    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    
+  if (input.value.match(emailInput)) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 // Verbergen van alert boxen
