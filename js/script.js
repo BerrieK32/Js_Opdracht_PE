@@ -78,4 +78,11 @@ function checkhWachtwoord(hwachtwoordInput){
         _errorsArray.push("Je wachtwoorden komen niet overeen.")
     }
 }
+
+// Kijken of de algemen voorwaarde is aangeduid
+function checkopHoogte(ophoogteCheck) {
+    if (!ophoogteCheck) {
+        _errorsArray.push("Je moet de algemene voorwaarden accepteren.")
+    }
+}
 // Verbergen van alert boxen
