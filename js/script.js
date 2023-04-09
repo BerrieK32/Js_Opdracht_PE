@@ -52,6 +52,7 @@ function checkEmail(emailInput) {
   if (input.value.match(emailInput)) {
     return true;
   } else {
+    _errorsArray.push("Het veld email is vereist.")
     return false;
   }
 }
