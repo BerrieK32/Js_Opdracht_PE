@@ -62,4 +62,20 @@ function checkPC(postcodeInput){
     if (postcodeInput < 1000 || postcodeInput > 9999)
         _errorsArray.push("De waarde van postcode moet tussen 1000 en 9999 liggen.")
 }
+
+// Kijken of de waarde Wachtwoord is ingegeven
+function checkWachtwoord(wachtwoordInput){
+    checkEmptyField(wachtwoordInput, "Het veld wachtwoord is vereist.");
+    if (wachtwoordInput.length < 8) {
+        _errorsArray.push("Een wachtwoord moet langer zijn dan 7 karakters.")
+    }
+}
+
+// Kijken of de waarde herhaalWachtwoord is ingegeven
+function checkhWachtwoord(hwachtwoordInput){
+    checkEmptyField(hwachtwoordInput, "Het veld wachtwoord is vereist.");
+    if (wachtwoordInput != hwachtwoordInput) {
+        _errorsArray.push("Je wachtwoorden komen niet overeen.")
+    }
+}
 // Verbergen van alert boxen
