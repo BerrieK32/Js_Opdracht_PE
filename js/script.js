@@ -33,14 +33,14 @@ function validateForm() {
   checkEmptyField(voornaamInput, "Het veld voornaam is vereist.");
   checkEmptyField(naamInput, "Het veld naam is vereist.");
   checkEmptyField(gebruikersnaamInput, "Het veld gebruikersnaam is vereist.");
-  checkEmptyField(emailInput, "Het veld email is vereist.");
-  checkEmptyField(wachtwoordInput, "Het veld wachtwoord is vereist.");
-  checkEmptyField(hwachtwoordInput, "Het veld herhaal wachtwoord is vereist.");
+  checkEmail(emailInput);
+  checkWachtwoord(wachtwoordInput);
+  checkhWachtwoord(hwachtwoordInput);
   checkEmptyField(adresInput, "Adres is vereist.");
   checkEmptyField(landSelect, "Land is vereist.");
   checkEmptyField(provincieSelect, "Provincie is vereist.");
-  checkEmptyField(postcodeInput, "Het veld postcode is vereist.");
-  checkEmptyField(voorwaardenCheck, "Je moet de algemene voorwaarden accepteren.");
+  checkPC(postcodeInput);
+  checkVoorwaarden(voorwaardenCheck);
 }
 
 // Kijken of de waarde e-mail is ingegeven
@@ -80,10 +80,35 @@ function checkhWachtwoord(hwachtwoordInput){
     }
 }
 
-// Kijken of de algemen voorwaarde is aangeduid
+// Kijken of de algemene voorwaarde is aangeduid
 function checkVoorwaarden(voorwaardenCheck) {
     if (!voorwaardenCheck) {
         _errorsArray.push("Je moet de algemene voorwaarden accepteren.")
+    }
+}
+
+// Kijken of de betalingswijze is aangeduid
+function validatePayment(){
+    if (!betalingCheck) {
+        _errorsArray.push("Je moet een betaalmethode hebben aangevinkt.")
+    }
+    else{
+        switch (betalingCheck) {
+            case betalingCheck ="Banking app":
+                betaaldmelding.innerHTML = "<p>Je betaalwijze is Banking app.</p>";
+                break;
+            case betalingCheck ="Overschrijving":
+                betaaldmelding.innerHTML = "<p>Je betaalwijze is overschrijving.</p>";
+                break;
+            case betalingCheck ="Visa Card":
+                betaaldmelding.innerHTML = "<p>Je betaalwijze is Visa Card.</p>";
+                break;
+            case betalingCheck ="Paypal":
+                betaaldmelding.innerHTML = "<p>Je betaalwijze is Paypal.</p>";
+                break;
+            default:
+                break;
+        }
     }
 }
 // Verbergen van alert boxen
