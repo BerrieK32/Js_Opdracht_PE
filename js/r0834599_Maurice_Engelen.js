@@ -144,5 +144,3 @@ function validatePayment() {
     betaling.innerText = selectedOption.message;
   }
 }
-
-// Verbergen van alert boxen
