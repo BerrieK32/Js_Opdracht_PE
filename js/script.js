@@ -26,4 +26,19 @@ function validateForm() {
   foutmelding.innerHTML = "";
   volledigmelding.innerHTML = "";
   betaaldmelding.innerHTML = "";
+
+  // Kijken of al de waardes van de form ingevuld zijn
+  checkEmptyField(voornaamInput, "Het veld voornaam is vereist.");
+  checkEmptyField(naamInput, "Het veld naam is vereist.");
+  checkEmptyField(gebruikersnaamInput, "Het veld gebruikersnaam is vereist.");
+  checkEmptyField(emailInput, "Het veld email is vereist.");
+  checkEmptyField(wachtwoordInput, "Het veld wachtwoord is vereist.");
+  checkEmptyField(hwachtwoordInput, "Het veld herhaal wachtwoord is vereist.");
+  checkEmptyField(adresInput, "Adres is vereist.");
+  checkEmptyField(landSelect, "Land is vereist.");
+  checkEmptyField(provincieSelect, "Provincie is vereist.");
+  checkEmptyField(postcodeInput, "Het veld postcode is vereist.");
+  checkEmptyField(ophoogteCheck, "Je moet de algemene voorwaarden accepteren.");
 }
+
+// Verbergen van alert boxen
