@@ -19,7 +19,7 @@ function validateForm() {
   let landSelect = document.getElementById("IPland").value;
   let provincieSelect = document.getElementById("IPprovincie").value;
   let postcodeInput = document.getElementById("IPpostcode").value;
-  let ophoogteCheck = document.getElementById("IPinschrijven").value;
+  let voorwaardenCheck = document.getElementById("IPvoorwaarden").value;
   let betalingCheck = document.querySelector(
     'input[name="paymentMethod"]:checked'
   ).value;
@@ -40,7 +40,7 @@ function validateForm() {
   checkEmptyField(landSelect, "Land is vereist.");
   checkEmptyField(provincieSelect, "Provincie is vereist.");
   checkEmptyField(postcodeInput, "Het veld postcode is vereist.");
-  checkEmptyField(ophoogteCheck, "Je moet de algemene voorwaarden accepteren.");
+  checkEmptyField(voorwaardenCheck, "Je moet de algemene voorwaarden accepteren.");
 }
 
 // Kijken of de waarde e-mail is ingegeven
@@ -80,8 +80,8 @@ function checkhWachtwoord(hwachtwoordInput){
 }
 
 // Kijken of de algemen voorwaarde is aangeduid
-function checkopHoogte(ophoogteCheck) {
-    if (!ophoogteCheck) {
+function checkVoorwaarden(voorwaardenCheck) {
+    if (!voorwaardenCheck) {
         _errorsArray.push("Je moet de algemene voorwaarden accepteren.")
     }
 }
