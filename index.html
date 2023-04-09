@@ -12,7 +12,7 @@
       crossorigin="anonymous"
     />
     <!--Link naar Style en javascript-->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" />
     <script defer src="js/script.js"></script>
 
     <title>PE opdracht</title>
@@ -21,35 +21,36 @@
     <div class="container">
       <main>
         <h2 class="mb-3">Registreer</h2>
-            <p>
-              Meld je aan bij Anoroc Services, wij beschermen jouw software
-              tegen malware!
-            </p>
+        <p>
+          Meld je aan bij Anoroc Services, wij beschermen jouw software tegen
+          malware!
+        </p>
         <div class="row g-5">
           <div id="alertboxen" class="col-md-5 col-lg-4 order-md-last">
-            <div id="foutmelding" class="alert alert-danger" style="display: none" role="alert">
+            <div id="foutmelding" class="alert alert-danger" role="alert">
               <h4>Yikes, errors..</h4>
-              <p></p>
+              <p id="fouten"></p>
             </div>
-            <div id="volledigmelding" class="alert alert-success" style="display: none" role="alert">
+            <div
+              id="volledigmelding"
+              class="alert alert-success"
+              role="alert"
+            >
               <h4>Goed gedaan!</h4>
-              <p></p>
+              <p id="volledig"></p>
             </div>
-            <div id="betaaldmelding" class="alert alert-primary" style="display: none" role="alert">
+            <div
+              id="betaaldmelding"
+              class="alert alert-primary"
+              role="alert"
+            >
               <h4>Betalingwijze</h4>
-              <p></p>
+              <p id="betaling"></p>
             </div>
-            
           </div>
           <div class="col-md-7 col-lg-8">
-            
             <!--Form-->
-            <form
-              class="needs-validation"
-              novalidate=""
-              action=""
-              method="post"
-            >
+            <form id="form" class="needs-validation" novalidate>
               <div class="row g-3">
                 <!--Rij 1-->
                 <!--Voornaam-->
@@ -60,7 +61,7 @@
                     class="form-control"
                     type="text"
                     placeholder="Uw voornaam"
-                    required=""
+                    required
                   />
                   <div class="invalid-feedback">
                     Het veld voornaam is vereist
@@ -74,7 +75,7 @@
                     class="form-control"
                     type="text"
                     placeholder="Uw naam"
-                    required=""
+                    required
                   />
                   <div class="invalid-feedback">Het veld naam is vereist</div>
                 </div>
@@ -91,7 +92,7 @@
                       class="form-control"
                       type="text"
                       placeholder="u911236"
-                      required=""
+                      required
                     />
                     <div class="invalid-feedback">
                       Het veld Gebruikersnaam is vereist
@@ -106,7 +107,6 @@
                     class="form-control"
                     type="email"
                     placeholder="mail@example.be"
-                    required=""
                   />
                   <div class="invalid-feedback">
                     Het veld E-mailadres is vereist
@@ -122,7 +122,7 @@
                     id="IPwachtwoord"
                     class="form-control"
                     type="password"
-                    required=""
+                    required
                   />
                   <div class="invalid-feedback">
                     Het veld Wachtwoord is vereist
@@ -140,7 +140,7 @@
                     id="IPhwachtwoord"
                     class="form-control"
                     type="password"
-                    required=""
+                    required
                   />
                   <div class="invalid-feedback">
                     Het veld Herhaal wachtwoord is vereist
@@ -155,7 +155,7 @@
                     class="form-control"
                     type="text"
                     placeholder="Uw adres en huisnummer"
-                    required=""
+                    required
                   />
                   <div class="invalid-feedback">Het veld Adres is vereist</div>
                 </div>
@@ -189,53 +189,95 @@
                 </div>
                 <!--Postcode-->
                 <div class="col-md-3">
-                    <label class="form-label" for="IPpostcode">Postcode</label>
-                    <input
-                    id="IPpostcode"
-                    class="form-control"
-                    type="number"
-                  />
+                  <label class="form-label" for="IPpostcode">Postcode</label>
+                  <input id="IPpostcode" class="form-control" type="number" />
                 </div>
-                <hr class="my-4">
+                <hr class="my-4" />
                 <!--Rij 6-->
                 <!--Hou me op de hoogte-->
                 <div class="col-md-6">
-                    <h4 class="mb-3">Hou me op de hoogte</h4>
-                    <div class="form-check">
-                        <input class="form-check-input" id="IPinschrijven" type="checkbox">
-                        <label class="form-check-label" for="IPinschrijven">Inschrijven voor onze nieuwsbrief</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" id="IPvoorwaarden" type="checkbox">
-                        <label class="form-check-label" for="IPvoorwaarden">Ik ga akkoord met de algemene voorwaarden.</label>
-                    </div>
+                  <h4 class="mb-3">Hou me op de hoogte</h4>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      id="IPinschrijven"
+                      type="checkbox"
+                    />
+                    <label class="form-check-label" for="IPinschrijven"
+                      >Inschrijven voor onze nieuwsbrief</label
+                    >
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      id="IPvoorwaarden"
+                      type="checkbox"
+                    />
+                    <label class="form-check-label" for="IPvoorwaarden"
+                      >Ik ga akkoord met de algemene voorwaarden.</label
+                    >
+                  </div>
                 </div>
                 <!--Betaling-->
                 <div class="col-md-6">
-                    <h4 class="mb-3">Betaling</h4>
-                    <div class="my-3">
-                        <div class="form-check">
-                            <input class="form-check-input" id="IPbanking" type="radio" name="paymentMethod">
-                            <label class="form-check-label" for="IPbanking">Banking app</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" id="IPoverschrijving" type="radio" name="paymentMethod">
-                            <label class="form-check-label" for="IPoverschrijving">Overschrijving</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" id="IPvisa" type="radio" name="paymentMethod">
-                            <label class="form-check-label" for="IPvisa">Visa card</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" id="IPpaypal" type="radio" name="paymentMethod">
-                            <label class="form-check-label" for="IPpaypal">Paypal</label>
-                        </div>
+                  <h4 class="mb-3">Betaling</h4>
+                  <div class="my-3" id="betaling">
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        id="IPbanking"
+                        type="radio"
+                        name="paymentMethod"
+                      />
+                      <label class="form-check-label" for="IPbanking"
+                        >Banking app</label
+                      >
                     </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        id="IPoverschrijving"
+                        type="radio"
+                        name="paymentMethod"
+                      />
+                      <label class="form-check-label" for="IPoverschrijving"
+                        >Overschrijving</label
+                      >
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        id="IPvisa"
+                        type="radio"
+                        name="paymentMethod"
+                      />
+                      <label class="form-check-label" for="IPvisa"
+                        >Visa card</label
+                      >
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        id="IPpaypal"
+                        type="radio"
+                        name="paymentMethod"
+                      />
+                      <label class="form-check-label" for="IPpaypal"
+                        >Paypal</label
+                      >
+                    </div>
+                  </div>
                 </div>
-                <hr class="my-4">
+                <hr class="my-4" />
                 <!--Rij 7-->
                 <!--Wave your magic wand-->
-                <button class="w-100 btn btn-primary btn-lg" type="submit">Wave your magic wand</button>
+                <button
+                  class="w-100 btn btn-primary btn-lg"
+                  type="button"
+                  onclick="validateForm()"
+                >
+                  Wave your magic wand
+                </button>
               </div>
             </form>
           </div>
