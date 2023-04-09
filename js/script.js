@@ -48,7 +48,7 @@ function checkEmail(emailInput) {
   // https://www.simplilearn.com/tutorials/javascript-tutorial/email-validation-in-javascript
   var validRegex =
     /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-    
+
   if (input.value.match(emailInput)) {
     return true;
   } else {
@@ -56,4 +56,10 @@ function checkEmail(emailInput) {
   }
 }
 
+// Kijken of de waarde Postcode is ingegeven
+function checkPC(postcodeInput){
+    checkEmptyField(postcodeInput, "Het veld postcode is vereist.");
+    if (postcodeInput < 1000 || postcodeInput > 9999)
+        _errorsArray.push("De waarde van postcode moet tussen 1000 en 9999 liggen.")
+}
 // Verbergen van alert boxen
