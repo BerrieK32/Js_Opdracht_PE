@@ -1,9 +1,19 @@
 // Toevoegen van array
 let errorsArray = new Array();
 
+// Declareren alert boxen
+let Foutmelding = document.getElementById("foutmelding");
+let volledigmelding = document.getElementById("volledigmelding");
+let betaaldmelding = document.getElementById("betaaldmelding");
+
+// Alert boxen verberen
+Foutmelding.style.display = "none";
+volledigmelding.style.display = "none";
+betaaldmelding.style.display = "none";
+
 // Validatie functie form
 function validateForm() {
-  // Declareren alert boxen
+  // Declareren alert p tag
   let fouten = document.getElementById("fouten");
   let volledig = document.getElementById("volledig");
   let betaling = document.getElementById("betaling");
@@ -43,15 +53,15 @@ function validateForm() {
 
   // Checken of email juist is
   if (!checkEmail(emailInput)) {
-    errorsArray.push("E-mailadres is niet correct.")
+    errorsArray.push("E-mailadres is niet correct.");
   }
 
-  if (document.querySelector('input[name="paymentMethod"]:checked') == false) {
-    errorsArray.push("Vink een betalingsmethode aan");
-  }
   // Weergeven van de alerts
   if (errorsArray.length === 0) {
     // Als er geen lege velden gevonden worden
+    Foutmelding.style.display = "none";
+    volledigmelding.style.display = "block";
+    betaaldmelding.style.display = "block";
     volledig.innerText = "Aww yeah, je werd geregistreerd.";
     validatePayment();
     // Velden leegmaken van de form
@@ -59,8 +69,11 @@ function validateForm() {
     form.reset();
   } else {
     // Als er lege velden gevonden worden
-    errorsArray.forEach(element => {
-        fouten.innerHTML += element + "<br>";
+    Foutmelding.style.display = "block";
+    volledigmelding.style.display = "none";
+    betaaldmelding.style.display = "none";
+    errorsArray.forEach((element) => {
+      fouten.innerHTML += element + "<br>";
     });
   }
 }
@@ -100,7 +113,7 @@ function checkWachtwoord(wachtwoordInput, hwachtwoordInput) {
   if (wachtwoordInput.length < 8) {
     errorsArray.push("Een wachtwoord moet langer zijn dan 7 karakters.");
   }
-  if (wachtwoordInput != hwachtwoordInput) {
+  if (wachtwoordInput !== hwachtwoordInput) {
     errorsArray.push("Je wachtwoorden komen niet overeen.");
   }
 }
@@ -113,21 +126,23 @@ function checkVoorwaarden(voorwaardenCheck) {
 }
 
 // Kijken of de betalingswijze is aangeduid
+function validatePayment() {
+  const paymentOptions = [
+    { id: "IPbanking", message: "Je betaalwijze is Banking app." },
+    { id: "IPoverschrijving", message: "Je betaalwijze is overschrijving." },
+    { id: "IPvisa", message: "Je betaalwijze is Visa Card." },
+    { id: "IPpaypal", message: "Je betaalwijze is Paypal." },
+  ];
+
+  const selectedOption = paymentOptions.find(
+    (option) => document.querySelector(`#${option.id}`).checked
+  );
+
+  if (!selectedOption) {
+    errorsArray.push("Gelieve een betalingsoptie te kiezen.");
+  } else {
+    betaling.innerText = selectedOption.message;
+  }
+}
 
 // Verbergen van alert boxen
-function validatePayment() {
-    const paymentOptions = [
-        { id: "IPbanking", message: "Je betaalwijze is Banking app." },
-        { id: "IPoverschrijving", message: "Je betaalwijze is overschrijving." },
-        { id: "IPvisa", message: "Je betaalwijze is Visa Card." },
-        { id: "IPpaypal", message: "Je betaalwijze is Paypal." }
-    ];
-  
-    const selectedOption = paymentOptions.find(option => document.querySelector(`#${option.id}`).checked);
-  
-    if (!selectedOption) {
-        errorsArray.push("Gelieve een betalingsoptie te kiezen.");
-    } else {
-        betaling.innerText = selectedOption.message;
-    }
-}
